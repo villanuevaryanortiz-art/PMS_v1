@@ -61,8 +61,8 @@
             btnHamburger.Dock = DockStyle.Left;
             btnHamburger.FlatAppearance.BorderSize = 0;
             btnHamburger.FlatStyle = FlatStyle.Flat;
-            btnHamburger.Font = new Font("Arial", 28.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnHamburger.ForeColor = Color.Black;
+            btnHamburger.Font = new Font("Arial", 28.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHamburger.ForeColor = Color.SteelBlue;
             btnHamburger.Location = new Point(0, 0);
             btnHamburger.Name = "btnHamburger";
             btnHamburger.Size = new Size(88, 90);

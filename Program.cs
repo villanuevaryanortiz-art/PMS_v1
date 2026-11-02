@@ -1,3 +1,6 @@
+using Microsoft.VisualBasic.ApplicationServices;
+using PMS_v1.Forms;
+
 namespace pms_UI
 {
     internal static class Program
@@ -11,7 +14,7 @@ namespace pms_UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Main());
+            Application.Run(new Login());
         }
     }
 }
