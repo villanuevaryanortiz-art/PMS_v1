@@ -28,18 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
+            sideMenu1 = new pms_UI.User_Controls.SideMenu();
             SuspendLayout();
+            // 
+            // sideMenu1
+            // 
+            sideMenu1.BackgroundImage = (Image)resources.GetObject("sideMenu1.BackgroundImage");
+            sideMenu1.BackgroundImageLayout = ImageLayout.Stretch;
+            sideMenu1.Dock = DockStyle.Left;
+            sideMenu1.Location = new Point(0, 0);
+            sideMenu1.Name = "sideMenu1";
+            sideMenu1.Size = new Size(290, 977);
+            sideMenu1.TabIndex = 0;
             // 
             // Main
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(1422, 977);
+            Controls.Add(sideMenu1);
             Name = "Main";
             Text = "BaktuTenant";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private User_Controls.SideMenu sideMenu1;
     }
 }
