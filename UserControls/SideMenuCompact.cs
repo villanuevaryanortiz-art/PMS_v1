@@ -3,30 +3,52 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing.Imaging;
 
-namespace pms_UI.User_Controls
+namespace PMS_v1.UserControls
 {
-    public partial class SideMenu : UserControl
+    public partial class SideMenuCompact : UserControl
     {
-        public SideMenu()
+        public event Action<string>? PageRequested;
+        public SideMenuCompact()
         {
             InitializeComponent();
-
             // Normal color, hover color
-            StyleButtons(this, Color.White, Color.FromArgb(215, 215, 215));   // greyish white
+            StyleButtons(this, Color.White, Color.FromArgb(140, 224, 78)); // green
+
             // Different hover color for specific buttons
             StyleButton(btnLogout, Color.White, Color.FromArgb(235, 80, 90)); // red
+
+            var tip = new ToolTip();
+            tip.SetToolTip(btnDashboard, "Dashboard");
+            tip.SetToolTip(btnProperty, "Properties");
+            tip.SetToolTip(btnLeasing, "Tenants");
+            tip.SetToolTip(btnBilling, "Billing");
+            tip.SetToolTip(btnPayment, "Payment");
+            tip.SetToolTip(btnMaintenance, "Maintenance");
+            tip.SetToolTip(btnReports, "Reports");
+            tip.SetToolTip(btnSettings, "Settings");
+            tip.SetToolTip(btnLogout, "Logout");
+
+            btnDashboard.Click += (s, e) => PageRequested?.Invoke("Dashboard");
+            btnProperty.Click += (s, e) => PageRequested?.Invoke("Properties");
+            btnLeasing.Click += (s, e) => PageRequested?.Invoke("Tenants");
+            btnBilling.Click += (s, e) => PageRequested?.Invoke("Billing");
+            btnPayment.Click += (s, e) => PageRequested?.Invoke("Payment");
+            btnMaintenance.Click += (s, e) => PageRequested?.Invoke("Maintenance");
+            btnReports.Click += (s, e) => PageRequested?.Invoke("Reports");
+            btnSettings.Click += (s, e) => PageRequested?.Invoke("Settings");
+            btnLogout.Click += (s, e) => PageRequested?.Invoke("Logout");
         }
 
-        // Styles every plain Button inside `root`
         private void StyleButtons(Control root, Color normal, Color hover)
         {
             foreach (Control c in root.Controls)
             {
-                if (c is Button b) StyleButton(b, normal, hover);
+                if (c is Button b && c != btnLogout)
+                    StyleButton(b, normal, hover);
                 if (c.HasChildren) StyleButtons(c, normal, hover);
             }
         }
@@ -39,7 +61,7 @@ namespace pms_UI.User_Controls
             b.FlatAppearance.MouseDownBackColor = Color.Transparent;
             b.BackColor = Color.Transparent;
             b.UseVisualStyleBackColor = false;
-            b.Cursor = Cursors.Hand;
+            b.Cursor = Cursors.Arrow;
             b.ForeColor = normal;
 
             Image? src = b.Image;

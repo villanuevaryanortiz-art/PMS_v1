@@ -1,6 +1,6 @@
 ﻿namespace pms_UI.User_Controls
 {
-    partial class SideMenu
+    partial class SideMenuFull
     {
         /// <summary> 
         /// Required designer variable.
@@ -33,7 +33,7 @@
             pnlFoot = new Panel();
             btnLogout = new Button();
             btnSettings = new Button();
-            panel1 = new Panel();
+            pnlMenu = new Panel();
             btnReports = new Button();
             btnMaintenance = new Button();
             btnPayment = new Button();
@@ -42,7 +42,7 @@
             btnProperty = new Button();
             btnDashboard = new Button();
             pnlFoot.SuspendLayout();
-            panel1.SuspendLayout();
+            pnlMenu.SuspendLayout();
             SuspendLayout();
             // 
             // pnlHead
@@ -116,22 +116,22 @@
             btnSettings.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnSettings.UseVisualStyleBackColor = true;
             // 
-            // panel1
+            // pnlMenu
             // 
-            panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(btnReports);
-            panel1.Controls.Add(btnMaintenance);
-            panel1.Controls.Add(btnPayment);
-            panel1.Controls.Add(btnBilling);
-            panel1.Controls.Add(btnLeasing);
-            panel1.Controls.Add(btnProperty);
-            panel1.Controls.Add(btnDashboard);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 149);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(0, 20, 0, 0);
-            panel1.Size = new Size(290, 690);
-            panel1.TabIndex = 3;
+            pnlMenu.BackColor = Color.Transparent;
+            pnlMenu.Controls.Add(btnReports);
+            pnlMenu.Controls.Add(btnMaintenance);
+            pnlMenu.Controls.Add(btnPayment);
+            pnlMenu.Controls.Add(btnBilling);
+            pnlMenu.Controls.Add(btnLeasing);
+            pnlMenu.Controls.Add(btnProperty);
+            pnlMenu.Controls.Add(btnDashboard);
+            pnlMenu.Dock = DockStyle.Fill;
+            pnlMenu.Location = new Point(0, 149);
+            pnlMenu.Name = "pnlMenu";
+            pnlMenu.Padding = new Padding(0, 20, 0, 0);
+            pnlMenu.Size = new Size(290, 876);
+            pnlMenu.TabIndex = 3;
             // 
             // btnReports
             // 
@@ -266,21 +266,21 @@
             btnDashboard.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnDashboard.UseVisualStyleBackColor = true;
             // 
-            // SideMenu
+            // SideMenuFull
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = PMS_v1.Resources.Resources.SideMenu;
             BackgroundImageLayout = ImageLayout.Stretch;
-            Controls.Add(panel1);
             Controls.Add(pnlFoot);
+            Controls.Add(pnlMenu);
             Controls.Add(pnlDivider);
             Controls.Add(pnlHead);
             DoubleBuffered = true;
-            Name = "SideMenu";
+            Name = "SideMenuFull";
             Size = new Size(290, 1025);
             pnlFoot.ResumeLayout(false);
-            panel1.ResumeLayout(false);
+            pnlMenu.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -289,7 +289,7 @@
         private Panel pnlHead;
         private Panel pnlDivider;
         private Panel pnlFoot;
-        private Panel panel1;
+        private Panel pnlMenu;
         private Button btnProperty;
         private Button btnDashboard;
         private Button btnBilling;

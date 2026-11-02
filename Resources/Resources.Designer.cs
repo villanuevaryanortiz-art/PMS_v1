@@ -93,6 +93,16 @@ namespace PMS_v1.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap DividerCompact {
+            get {
+                object obj = ResourceManager.GetObject("DividerCompact", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Header_Logo {
             get {
                 object obj = ResourceManager.GetObject("Header Logo", resourceCulture);
@@ -116,6 +126,26 @@ namespace PMS_v1.Resources {
         internal static System.Drawing.Bitmap Lease {
             get {
                 object obj = ResourceManager.GetObject("Lease", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Logo {
+            get {
+                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LOGO__1__1 {
+            get {
+                object obj = ResourceManager.GetObject("LOGO (1) 1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
