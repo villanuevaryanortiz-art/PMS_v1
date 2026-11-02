@@ -28,8 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            SuspendLayout();
+            // 
+            // SideMenu
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = PMS_v1.Resources.Resources.SideMenu;
+            Name = "SideMenu";
+            Size = new Size(290, 1025);
+            ResumeLayout(false);
         }
 
         #endregion
