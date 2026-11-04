@@ -14,7 +14,17 @@ namespace pms_UI
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Login());
+
+            while (true)
+            {
+                var login = new Login();
+                if (login.ShowDialog() != DialogResult.OK) break;
+
+                var main = new Main();
+                Application.Run(main);
+
+                if (!main.LoggedOut) break;   // closed with X, so exit the app
+            }
         }
     }
 }

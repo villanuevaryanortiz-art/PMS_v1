@@ -319,6 +319,7 @@
             Controls.Add(pnlBackground);
             Name = "Login";
             Text = "Login";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pnlBackground).EndInit();
             pnlLogin.ResumeLayout(false);
             pnlLoginhere.ResumeLayout(false);

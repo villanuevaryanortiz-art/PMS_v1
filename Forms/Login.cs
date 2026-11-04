@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using Org.BouncyCastle.Crypto.Generators;
 using PMS_v1.Database;
+using PMS_v1.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,32 +18,15 @@ namespace PMS_v1.Forms
 
     public partial class Login : Form
     {
-        private bool _passwordVisible = false;
         public Login()
         {
             InitializeComponent();
 
-            txtPassword.UseSystemPasswordChar = true;
-            btnShowHidePass.Image = Resources.Resources.LoginEye;
-
-            btnShowHidePass.Click += btnShowHidePass_Click;
+            PasswordToggle.Attach(txtPassword, btnShowHidePass);
 
             btnLogin.StateNormal.Content.ShortText.Color1 = Color.White;
             btnLogin.StateTracking.Content.ShortText.Color1 = Color.FromArgb(116, 219, 219);   // hover
             btnLogin.StatePressed.Content.ShortText.Color1 = Color.White;     // clicked
-        }
-
-        private void btnShowHidePass_Click(object sender, EventArgs e)
-        {
-            _passwordVisible = !_passwordVisible;
-            txtPassword.UseSystemPasswordChar = !_passwordVisible;
-            btnShowHidePass.Image = _passwordVisible
-                ? Resources.Resources.EyeClose : Resources.Resources.LoginEye;
-        }
-
-        private void lnklblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -96,5 +80,17 @@ namespace PMS_v1.Forms
             }
         }
 
+        private void lnklblSignUp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            using (var signUp = new SignUp())
+            {
+                signUp.ShowDialog();
+
+            }
+            this.Show();
+            txtUsername.Clear();
+            txtPassword.Clear();
+        }
     }
 }

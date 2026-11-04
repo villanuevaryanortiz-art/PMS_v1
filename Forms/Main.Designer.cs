@@ -32,8 +32,8 @@
             sideMenu1 = new pms_UI.User_Controls.SideMenuFull();
             sideMenuCompact1 = new PMS_v1.UserControls.SideMenuCompact();
             pnlRight = new Panel();
-            header1 = new PMS_v1.UserControls.Header();
             pnlContent = new Panel();
+            header1 = new PMS_v1.UserControls.Header();
             pnlRight.SuspendLayout();
             SuspendLayout();
             // 
@@ -66,14 +66,6 @@
             pnlRight.Size = new Size(1043, 977);
             pnlRight.TabIndex = 3;
             // 
-            // header1
-            // 
-            header1.Dock = DockStyle.Top;
-            header1.Location = new Point(0, 0);
-            header1.Name = "header1";
-            header1.Size = new Size(1043, 75);
-            header1.TabIndex = 0;
-            // 
             // pnlContent
             // 
             pnlContent.Dock = DockStyle.Fill;
@@ -81,6 +73,14 @@
             pnlContent.Name = "pnlContent";
             pnlContent.Size = new Size(1043, 902);
             pnlContent.TabIndex = 1;
+            // 
+            // header1
+            // 
+            header1.Dock = DockStyle.Top;
+            header1.Location = new Point(0, 0);
+            header1.Name = "header1";
+            header1.Size = new Size(1043, 75);
+            header1.TabIndex = 0;
             // 
             // Main
             // 
@@ -92,6 +92,7 @@
             Controls.Add(sideMenu1);
             Name = "Main";
             Text = "BaktuTenant";
+            WindowState = FormWindowState.Maximized;
             pnlRight.ResumeLayout(false);
             ResumeLayout(false);
         }
