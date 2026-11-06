@@ -22,10 +22,10 @@
             lblBreadcrumb = new Label();
             lblModuleTitle = new Label();
             tlpMetricsRow = new TableLayoutPanel();
-            rgbActiveCard = new Krypton.Toolkit.KryptonGroupBox();
-            rgbPendingCard = new Krypton.Toolkit.KryptonGroupBox();
-            rgbExpiredCard = new Krypton.Toolkit.KryptonGroupBox();
-            rgbTerminatedCard = new Krypton.Toolkit.KryptonGroupBox();
+            statCardActive = new PMS_v1.UserControls.Statcard();
+            statCardPending = new PMS_v1.UserControls.Statcard();
+            statCardExpired = new PMS_v1.UserControls.Statcard();
+            statCardTerminated = new PMS_v1.UserControls.Statcard();
             pnlCommandActionRow = new Panel();
             txtSearchInput = new Krypton.Toolkit.KryptonTextBox();
             cmbFilterDropdown = new Krypton.Toolkit.KryptonComboBox();
@@ -34,14 +34,6 @@
             tlpMainSkeleton.SuspendLayout();
             pnlHeaderBlock.SuspendLayout();
             tlpMetricsRow.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)rgbActiveCard).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbActiveCard.Panel).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbPendingCard).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbPendingCard.Panel).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbExpiredCard).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbExpiredCard.Panel).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbTerminatedCard).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)rgbTerminatedCard.Panel).BeginInit();
             pnlCommandActionRow.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)cmbFilterDropdown).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvLeases).BeginInit();
@@ -60,7 +52,7 @@
             tlpMainSkeleton.Name = "tlpMainSkeleton";
             tlpMainSkeleton.RowCount = 4;
             tlpMainSkeleton.RowStyles.Add(new RowStyle(SizeType.Absolute, 79F));
-            tlpMainSkeleton.RowStyles.Add(new RowStyle(SizeType.Absolute, 120F));
+            tlpMainSkeleton.RowStyles.Add(new RowStyle(SizeType.Absolute, 110F));
             tlpMainSkeleton.RowStyles.Add(new RowStyle(SizeType.Absolute, 65F));
             tlpMainSkeleton.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpMainSkeleton.Size = new Size(1150, 938);
@@ -105,66 +97,66 @@
             tlpMetricsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tlpMetricsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tlpMetricsRow.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tlpMetricsRow.Controls.Add(rgbActiveCard, 0, 0);
-            tlpMetricsRow.Controls.Add(rgbPendingCard, 1, 0);
-            tlpMetricsRow.Controls.Add(rgbExpiredCard, 2, 0);
-            tlpMetricsRow.Controls.Add(rgbTerminatedCard, 3, 0);
+            tlpMetricsRow.Controls.Add(statCardActive, 0, 0);
+            tlpMetricsRow.Controls.Add(statCardPending, 1, 0);
+            tlpMetricsRow.Controls.Add(statCardExpired, 2, 0);
+            tlpMetricsRow.Controls.Add(statCardTerminated, 3, 0);
             tlpMetricsRow.Dock = DockStyle.Fill;
             tlpMetricsRow.Location = new Point(20, 79);
             tlpMetricsRow.Margin = new Padding(20, 0, 20, 0);
             tlpMetricsRow.Name = "tlpMetricsRow";
             tlpMetricsRow.RowCount = 1;
             tlpMetricsRow.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tlpMetricsRow.Size = new Size(1110, 120);
+            tlpMetricsRow.Size = new Size(1110, 110);
             tlpMetricsRow.TabIndex = 1;
             // 
-            // rgbActiveCard
+            // statCardActive
             // 
-            rgbActiveCard.CaptionVisible = false;
-            rgbActiveCard.Dock = DockStyle.Fill;
-            rgbActiveCard.Location = new Point(12, 10);
-            rgbActiveCard.Margin = new Padding(12, 10, 12, 10);
-            rgbActiveCard.Size = new Size(253, 100);
-            rgbActiveCard.StateCommon.Back.Color1 = Color.White;
-            rgbActiveCard.StateCommon.Border.Color1 = Color.FromArgb(222, 226, 230);
-            rgbActiveCard.StateCommon.Border.Rounding = 16F;
-            rgbActiveCard.TabIndex = 0;
+            statCardActive.CardCaption = "Active";
+            statCardActive.CardIcon = Resources.Resources.check;
+            statCardActive.CardNumber = "00";
+            statCardActive.Dock = DockStyle.Fill;
+            statCardActive.Location = new Point(8, 0);
+            statCardActive.Margin = new Padding(8, 0, 8, 0);
+            statCardActive.Name = "statCardActive";
+            statCardActive.Size = new Size(261, 110);
+            statCardActive.TabIndex = 0;
             // 
-            // rgbPendingCard
+            // statCardPending
             // 
-            rgbPendingCard.CaptionVisible = false;
-            rgbPendingCard.Dock = DockStyle.Fill;
-            rgbPendingCard.Location = new Point(289, 10);
-            rgbPendingCard.Margin = new Padding(12, 10, 12, 10);
-            rgbPendingCard.Size = new Size(253, 100);
-            rgbPendingCard.StateCommon.Back.Color1 = Color.White;
-            rgbPendingCard.StateCommon.Border.Color1 = Color.FromArgb(222, 226, 230);
-            rgbPendingCard.StateCommon.Border.Rounding = 16F;
-            rgbPendingCard.TabIndex = 1;
+            statCardPending.CardCaption = "Pending";
+            statCardPending.CardIcon = Resources.Resources.clock;
+            statCardPending.CardNumber = "00";
+            statCardPending.Dock = DockStyle.Fill;
+            statCardPending.Location = new Point(285, 0);
+            statCardPending.Margin = new Padding(8, 0, 8, 0);
+            statCardPending.Name = "statCardPending";
+            statCardPending.Size = new Size(261, 110);
+            statCardPending.TabIndex = 1;
             // 
-            // rgbExpiredCard
+            // statCardExpired
             // 
-            rgbExpiredCard.CaptionVisible = false;
-            rgbExpiredCard.Dock = DockStyle.Fill;
-            rgbExpiredCard.Location = new Point(566, 10);
-            rgbExpiredCard.Margin = new Padding(12, 10, 12, 10);
-            rgbExpiredCard.Size = new Size(253, 100);
-            rgbExpiredCard.StateCommon.Back.Color1 = Color.White;
-            rgbExpiredCard.StateCommon.Border.Color1 = Color.FromArgb(222, 226, 230);
-            rgbExpiredCard.StateCommon.Border.Rounding = 16F;
-            rgbExpiredCard.TabIndex = 2;
+            statCardExpired.CardCaption = "Expired";
+            statCardExpired.CardIcon = Resources.Resources.exclamation;
+            statCardExpired.CardNumber = "00";
+            statCardExpired.Dock = DockStyle.Fill;
+            statCardExpired.Location = new Point(562, 0);
+            statCardExpired.Margin = new Padding(8, 0, 8, 0);
+            statCardExpired.Name = "statCardExpired";
+            statCardExpired.Size = new Size(261, 110);
+            statCardExpired.TabIndex = 2;
             // 
-            // rgbTerminatedCard
+            // statCardTerminated
             // 
-            rgbTerminatedCard.CaptionVisible = false;
-            rgbTerminatedCard.Dock = DockStyle.Fill;
-            rgbTerminatedCard.Location = new Point(843, 10);
-            rgbTerminatedCard.Margin = new Padding(12, 10, 12, 10);
-            rgbTerminatedCard.Size = new Size(255, 100);
-            rgbTerminatedCard.StateCommon.Back.Color1 = Color.White;
-            rgbTerminatedCard.StateCommon.Border.Color1 = Color.FromArgb(222, 226, 230);
-            rgbTerminatedCard.StateCommon.Border.Rounding = 16F;
-            rgbTerminatedCard.TabIndex = 3;
+            statCardTerminated.CardCaption = "Terminated";
+            statCardTerminated.CardIcon = Resources.Resources.remove;
+            statCardTerminated.CardNumber = "00";
+            statCardTerminated.Dock = DockStyle.Fill;
+            statCardTerminated.Location = new Point(839, 0);
+            statCardTerminated.Margin = new Padding(8, 0, 8, 0);
+            statCardTerminated.Name = "statCardTerminated";
+            statCardTerminated.Size = new Size(263, 110);
+            statCardTerminated.TabIndex = 3;
             // 
             // pnlCommandActionRow
             // 
@@ -172,7 +164,7 @@
             pnlCommandActionRow.Controls.Add(cmbFilterDropdown);
             pnlCommandActionRow.Controls.Add(btnNewLease);
             pnlCommandActionRow.Dock = DockStyle.Fill;
-            pnlCommandActionRow.Location = new Point(3, 202);
+            pnlCommandActionRow.Location = new Point(3, 192);
             pnlCommandActionRow.Name = "pnlCommandActionRow";
             pnlCommandActionRow.Size = new Size(1144, 59);
             pnlCommandActionRow.TabIndex = 2;
@@ -181,26 +173,22 @@
             // 
             txtSearchInput.Location = new Point(32, 12);
             txtSearchInput.Name = "txtSearchInput";
-            txtSearchInput.Size = new Size(580, 34);
+            txtSearchInput.Size = new Size(580, 31);
             txtSearchInput.StateCommon.Back.Color1 = Color.White;
             txtSearchInput.StateCommon.Border.Color1 = Color.FromArgb(222, 226, 230);
             txtSearchInput.StateCommon.Border.Rounding = 12F;
-            txtSearchInput.StateCommon.Content.Color1 = Color.FromArgb(33, 37, 41);
-            txtSearchInput.StateCommon.Content.Font = new Font("Segoe UI", 10F);
             txtSearchInput.TabIndex = 0;
             txtSearchInput.Text = "Search tenant, unit or lease...";
             // 
             // cmbFilterDropdown
             // 
             cmbFilterDropdown.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            cmbFilterDropdown.DropDownWidth = 140;
             cmbFilterDropdown.Location = new Point(734, 12);
             cmbFilterDropdown.Name = "cmbFilterDropdown";
-            cmbFilterDropdown.Size = new Size(150, 32);
+            cmbFilterDropdown.Size = new Size(150, 30);
             cmbFilterDropdown.StateCommon.ComboBox.Back.Color1 = Color.White;
             cmbFilterDropdown.StateCommon.ComboBox.Border.Color1 = Color.FromArgb(222, 226, 230);
             cmbFilterDropdown.StateCommon.ComboBox.Border.Rounding = 12F;
-            cmbFilterDropdown.StateCommon.ComboBox.Content.Font = new Font("Segoe UI", 10F);
             cmbFilterDropdown.TabIndex = 1;
             cmbFilterDropdown.Text = "Filter";
             // 
@@ -227,16 +215,14 @@
             dgvLeases.BorderStyle = BorderStyle.None;
             dgvLeases.CellBorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
             dgvLeases.ColumnHeadersHeight = 40;
-            dgvLeases.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvLeases.Dock = DockStyle.Fill;
-            dgvLeases.EnableHeadersVisualStyles = false;
             dgvLeases.GridColor = Color.FromArgb(233, 236, 239);
-            dgvLeases.Location = new Point(32, 274);
+            dgvLeases.Location = new Point(32, 264);
             dgvLeases.Margin = new Padding(32, 10, 32, 32);
             dgvLeases.Name = "dgvLeases";
             dgvLeases.RowHeadersVisible = false;
             dgvLeases.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvLeases.Size = new Size(1086, 632);
+            dgvLeases.Size = new Size(1086, 642);
             dgvLeases.TabIndex = 3;
             // 
             // LeasingModule
@@ -252,14 +238,6 @@
             pnlHeaderBlock.ResumeLayout(false);
             pnlHeaderBlock.PerformLayout();
             tlpMetricsRow.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)rgbActiveCard.Panel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbActiveCard).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbPendingCard.Panel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbPendingCard).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbExpiredCard.Panel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbExpiredCard).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbTerminatedCard.Panel).EndInit();
-            ((System.ComponentModel.ISupportInitialize)rgbTerminatedCard).EndInit();
             pnlCommandActionRow.ResumeLayout(false);
             pnlCommandActionRow.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)cmbFilterDropdown).EndInit();
@@ -272,17 +250,15 @@
         private System.Windows.Forms.Label lblBreadcrumb;
         private System.Windows.Forms.Label lblModuleTitle;
         private System.Windows.Forms.TableLayoutPanel tlpMetricsRow;
-        private Krypton.Toolkit.KryptonGroupBox rgbActiveCard;
-        private Krypton.Toolkit.KryptonGroupBox rgbPendingCard;
-        private Krypton.Toolkit.KryptonGroupBox rgbExpiredCard;
-        private Krypton.Toolkit.KryptonGroupBox rgbTerminatedCard;
-        // Form Fields
+        // 🚀 Cleaned-up 4 Statcard Fields
+        private PMS_v1.UserControls.Statcard statCardActive;
+        private PMS_v1.UserControls.Statcard statCardPending;
+        private PMS_v1.UserControls.Statcard statCardExpired;
+        private PMS_v1.UserControls.Statcard statCardTerminated;
         private System.Windows.Forms.Panel pnlCommandActionRow;
         private Krypton.Toolkit.KryptonTextBox txtSearchInput;
         private Krypton.Toolkit.KryptonComboBox cmbFilterDropdown;
         private Krypton.Toolkit.KryptonButton btnNewLease;
         private System.Windows.Forms.DataGridView dgvLeases;
-        private System.Windows.Forms.Panel pnlFigmaShadowLine;
-
     }
 }
